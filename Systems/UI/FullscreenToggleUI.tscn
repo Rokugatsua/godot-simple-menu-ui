@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Systems/UI/FullscreenToggleUI.gd" type="Script" id=1]
+
+[node name="FullscreenToggleUI" type="HBoxContainer"]
+anchor_right = 1.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_top = 5.0
+margin_right = 510.0
+margin_bottom = 19.0
+size_flags_horizontal = 3
+text = "FullScreen"
+
+[node name="CheckBox" type="CheckBox" parent="."]
+margin_left = 757.0
+margin_right = 781.0
+margin_bottom = 24.0
+size_flags_horizontal = 6
+
+[connection signal="toggled" from="CheckBox" to="." method="_on_CheckBox_toggled"]

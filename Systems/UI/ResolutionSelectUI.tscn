@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Systems/UI/ResolutionSelectUI.gd" type="Script" id=1]
+
+[node name="ResolutionSelectUI" type="HBoxContainer"]
+anchor_right = 1.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_top = 3.0
+margin_right = 510.0
+margin_bottom = 17.0
+size_flags_horizontal = 3
+text = "Resolution"
+
+[node name="OptionButton" type="OptionButton" parent="."]
+margin_left = 514.0
+margin_right = 1024.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+text = "1024x600"
+items = [ "1024x600", null, false, 0, null, "1280x800", null, false, 1, null, "1366x768", null, false, 2, null ]
+selected = 0
+
+[connection signal="item_selected" from="OptionButton" to="." method="_on_OptionButton_item_selected"]
